@@ -1,4 +1,4 @@
-const out = "What is your perfect date night?"
+const out = "what's your perfect first date?"
   .split("")
   .map(parseInt)
   .filter(a => a)
