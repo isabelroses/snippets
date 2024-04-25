@@ -35,7 +35,10 @@ int partition(int []keys, int left, int right, int pivot) {
 void quickSort(int size, int []keys, int start) {
   int pivot; /* index of pivot element */
   if ( size < 2 ) return; /* nothing to do for arrays of size < 2 */
-  pivot = start+(size/2); /* select some pivot element */
+  /* we should use randomised quicksort instead
+   * pivot = start+(size/2);  
+   * select some pivot element */
+  pivot = start + rng.nextInt(size); /* select random pivot */
   pivot = partition(keys, start, start + size - 1, pivot); /* partition input */
   if (pivot-start < size - pivot - 1) { /* check size of parts */
     quickSort(pivot-start, keys, start); /* sort smaller part */
